@@ -3,7 +3,7 @@ const app = express();
 const level = require("level");
 const db = level("my-db", { valueEncoding: "json" });
 app.use(express.json());
-const port = 3000;
+const port = parseInt(process.env.PORT || "3000", 10);
 app.use(express.static("public"));
 
 //créer un movie
